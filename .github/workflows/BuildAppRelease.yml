@@ -17,4 +17,4 @@ jobs:
       - name: Prepare
         run: bundle exec fastlane prepare
       - name: Build app
-        run: bundle exec fastlane build_test
+        run: bundle exec fastlane buildApp isRelease:true
