@@ -20,6 +20,7 @@
 		B22856A12CCAA02500526C6F /* ProjectDemoUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B22856A02CCAA02500526C6F /* ProjectDemoUITestsLaunchTests.swift */; };
 		B22856C12CCAAD9000526C6F /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = B22856C02CCAAD9000526C6F /* Strings.swift */; };
 		B22856C42CCAADDD00526C6F /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = B22856C22CCAADDD00526C6F /* Localizable.strings */; };
+		B23A514F2CCAEBD600888EE4 /* Splash.json in Resources */ = {isa = PBXBuildFile; fileRef = B23A514E2CCAEBD600888EE4 /* Splash.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,7 +52,7 @@
 		B228567D2CCAA02400526C6F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B22856812CCAA02400526C6F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		B22856842CCAA02400526C6F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		B22856862CCAA02500526C6F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		B22856862CCAA02500526C6F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ../Assets.xcassets; sourceTree = "<group>"; };
 		B22856892CCAA02500526C6F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B228568B2CCAA02500526C6F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B22856902CCAA02500526C6F /* ProjectDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ProjectDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -63,6 +64,7 @@
 		B22856C32CCAADDD00526C6F /* vi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = vi; path = vi.lproj/Localizable.strings; sourceTree = "<group>"; };
 		B22856C52CCAADE500526C6F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		B22856D92CCAAF6300526C6F /* ProjectDemo copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "ProjectDemo copy-Info.plist"; path = "/Users/hung/Documents/Interview/ProjectDemoInterview/ProjectDemo copy-Info.plist"; sourceTree = "<absolute>"; };
+		B23A514E2CCAEBD600888EE4 /* Splash.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Splash.json; sourceTree = "<group>"; };
 		E23B2DAA80E287D8C9463FC6 /* Pods_ProjectDemoTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ProjectDemoTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F0974864E70809ACC84B000A /* Pods_ProjectDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ProjectDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -131,17 +133,13 @@
 		B228567C2CCAA02400526C6F /* ProjectDemo */ = {
 			isa = PBXGroup;
 			children = (
+				B23A514C2CCAE8F700888EE4 /* Application */,
+				B23A514B2CCAE8F700888EE4 /* UI */,
 				B22856BF2CCAAD6500526C6F /* Generated */,
 				B22856B32CCAA93200526C6F /* Constant */,
 				B22856B22CCAA92E00526C6F /* Utils */,
 				B22856B12CCAA92800526C6F /* Services */,
 				B22856B02CCAA92000526C6F /* Resources */,
-				B228567D2CCAA02400526C6F /* AppDelegate.swift */,
-				B22856812CCAA02400526C6F /* ViewController.swift */,
-				B22856832CCAA02400526C6F /* Main.storyboard */,
-				B22856862CCAA02500526C6F /* Assets.xcassets */,
-				B22856882CCAA02500526C6F /* LaunchScreen.storyboard */,
-				B228568B2CCAA02500526C6F /* Info.plist */,
 			);
 			path = ProjectDemo;
 			sourceTree = "<group>";
@@ -166,6 +164,9 @@
 		B22856B02CCAA92000526C6F /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				B23A514D2CCAEBCB00888EE4 /* LottieFiles */,
+				B22856862CCAA02500526C6F /* Assets.xcassets */,
+				B228568B2CCAA02500526C6F /* Info.plist */,
 				B22856C22CCAADDD00526C6F /* Localizable.strings */,
 			);
 			path = Resources;
@@ -200,6 +201,32 @@
 			path = Generated;
 			sourceTree = "<group>";
 		};
+		B23A514B2CCAE8F700888EE4 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				B22856812CCAA02400526C6F /* ViewController.swift */,
+				B22856832CCAA02400526C6F /* Main.storyboard */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		B23A514C2CCAE8F700888EE4 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				B22856882CCAA02500526C6F /* LaunchScreen.storyboard */,
+				B228567D2CCAA02400526C6F /* AppDelegate.swift */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		B23A514D2CCAEBCB00888EE4 /* LottieFiles */ = {
+			isa = PBXGroup;
+			children = (
+				B23A514E2CCAEBD600888EE4 /* Splash.json */,
+			);
+			path = LottieFiles;
+			sourceTree = "<group>";
+		};
 		CABA6DC5C23707CE04C7CCB7 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -222,10 +249,11 @@
 			buildPhases = (
 				2DD56331E5306A996CA64376 /* [CP] Check Pods Manifest.lock */,
 				B22856762CCAA02400526C6F /* Sources */,
-				B22856AD2CCAA42A00526C6F /* ShellScript */,
 				B22856772CCAA02400526C6F /* Frameworks */,
 				B22856782CCAA02400526C6F /* Resources */,
-				B22856B82CCAAB6300526C6F /* ShellScript */,
+				B22856AD2CCAA42A00526C6F /* Swiftlint */,
+				B22856B82CCAAB6300526C6F /* SwiftGen */,
+				3D4B209244EAB762B053A0FE /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -263,6 +291,7 @@
 				B22856962CCAA02500526C6F /* Sources */,
 				B22856972CCAA02500526C6F /* Frameworks */,
 				B22856982CCAA02500526C6F /* Resources */,
+				62569C0C31123F7CCE9FDCDD /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -327,6 +356,7 @@
 				B22856872CCAA02500526C6F /* Assets.xcassets in Resources */,
 				B228568A2CCAA02500526C6F /* Base in Resources */,
 				B22856852CCAA02400526C6F /* Base in Resources */,
+				B23A514F2CCAEBD600888EE4 /* Splash.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -369,6 +399,23 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		3D4B209244EAB762B053A0FE /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ProjectDemo/Pods-ProjectDemo-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ProjectDemo/Pods-ProjectDemo-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ProjectDemo/Pods-ProjectDemo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		596D27A8D20A6D8257755C46 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -389,6 +436,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		62569C0C31123F7CCE9FDCDD /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ProjectDemo-ProjectDemoUITests/Pods-ProjectDemo-ProjectDemoUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ProjectDemo-ProjectDemoUITests/Pods-ProjectDemo-ProjectDemoUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ProjectDemo-ProjectDemoUITests/Pods-ProjectDemo-ProjectDemoUITests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		74B1559DA5DF4A760BB78BB1 /* [CP] Check Pods Manifest.lock */ = {
@@ -413,7 +477,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		B22856AD2CCAA42A00526C6F /* ShellScript */ = {
+		B22856AD2CCAA42A00526C6F /* Swiftlint */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -422,6 +486,7 @@
 			);
 			inputPaths = (
 			);
+			name = Swiftlint;
 			outputFileListPaths = (
 			);
 			outputPaths = (
@@ -430,7 +495,7 @@
 			shellPath = /bin/sh;
 			shellScript = "if test -d \"/opt/homebrew/bin/\"; then\n  PATH=\"/opt/homebrew/bin/:${PATH}\"\nfi\n\nexport PATH\n\nif which swiftlint >/dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
 		};
-		B22856B82CCAAB6300526C6F /* ShellScript */ = {
+		B22856B82CCAAB6300526C6F /* SwiftGen */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -440,6 +505,7 @@
 			inputPaths = (
 				"$(SRCROOT)/Resources/en.lproj",
 			);
+			name = SwiftGen;
 			outputFileListPaths = (
 			);
 			outputPaths = (
@@ -659,8 +725,8 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -669,9 +735,13 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.manhhung.ProjectDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -690,8 +760,8 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -700,9 +770,13 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.manhhung.ProjectDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

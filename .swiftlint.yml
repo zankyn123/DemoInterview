@@ -3,6 +3,7 @@ disabled_rules:
 - identifier_name
 - trailing_whitespace
 - blanket_disable_command
+- unneeded_override
 
 opt_in_rules:
     - attributes
@@ -42,6 +43,6 @@ function_parameter_count: 10
 cyclomatic_complexity: 100
 
 excluded:
+- Pods
 - ProjectDemoUITests/ProjectDemoUITestsLaunchTests.swift
 - fastlane
-- Pod
