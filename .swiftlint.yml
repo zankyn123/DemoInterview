@@ -1,0 +1,44 @@
+disabled_rules:
+- file_header
+- identifier_name
+- trailing_whitespace
+
+opt_in_rules:
+    - attributes
+    - class_delegate_protocol
+    - closure_parameter_position
+    - closure_spacing
+    - computed_accessors_order
+    - conditional_returns_on_newline
+    - empty_count 
+    - explicit_init 
+    - extension_access_modifier
+    - fallthrough
+    - fatal_error_message 
+    - first_where
+    - force_cast
+    - force_try
+    - implicit_getter
+    - multiline_parameters
+    - nimble_operator
+    - number_separator
+    - object_literal
+    - operator_usage_whitespace
+    - overridden_super_call
+    - private_outlet
+    - prohibited_super_call
+    - redundant_nil_coalescing
+    - switch_case_on_newline
+    - todo
+    - unused_closure_parameter
+    - valid_ibinspectable
+    - vertical_parameter_alignment_on_call
+    - weak_delegate
+    
+line_length: 250
+file_length: 1500
+function_parameter_count: 10
+cyclomatic_complexity: 100
+
+excluded:
+- ProjectDemoUITests/ProjectDemoUITestsLaunchTests.swift

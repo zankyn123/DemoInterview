@@ -1,0 +1,8 @@
+strings:
+  inputs: ProjectDemo/Resources/en.lproj
+  outputs:
+    templatePath: custom-strings.stencil
+    output: ProjectDemo/Generated/Strings.swift
+    params:
+      publicAccess: public
+      enumName: ProjectLanguage
