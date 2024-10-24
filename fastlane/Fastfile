@@ -23,11 +23,11 @@ lane :prepare do
     end
 
 desc "Build project"
-lane :build_test do
+lane :buildApp do |options|
+configuration = options[:isRelease] ? "ProjectDemo" : "ProjectDemo-Debug"
     xcodebuild(
       workspace: "ProjectDemo.xcworkspace",
-      scheme: "ProjectDemo-Debug",
-      configuration: "Debug",
+      scheme: configuration,
       build_path: "./build",
       derived_data_path: "./derived",
       skip_package_ipa: true,
