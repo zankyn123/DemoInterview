@@ -1,17 +1,19 @@
-name: Build app
+name: Test build release
 on: 
   pull_request:
     branches:
       - main
+  push:
+    branches:
+      - main
 jobs:
   iOS:
-    name: Build app iOS
+    name: Build release iOS
     runs-on: macos-lastest
     steps:
       - uses: actions/checkout@v2
       - name: Bundle install
         run: bundle install
-        
       - name: Prepare
         run: bundle exec fastlane prepare
       - name: Build app
