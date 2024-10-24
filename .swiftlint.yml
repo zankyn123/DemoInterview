@@ -42,3 +42,5 @@ cyclomatic_complexity: 100
 
 excluded:
 - ProjectDemoUITests/ProjectDemoUITestsLaunchTests.swift
+- fastlane
+- Pod
