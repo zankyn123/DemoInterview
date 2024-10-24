@@ -7,8 +7,8 @@ target 'ProjectDemo' do
 
   # Pods for ProjectDemo
 
-  pod 'SwiftLint'
-  pod 'SwiftGen'
+  pod 'SwiftLint', '0.57.0'
+  pod 'SwiftGen', '6.6.3'
   
   target 'ProjectDemoTests' do
     inherit! :search_paths

@@ -1,0 +1,41 @@
+# This file contains the fastlane.tools configuration
+# You can find the documentation at https://docs.fastlane.tools
+#
+# For a list of all available actions, check out
+#
+#     https://docs.fastlane.tools/actions
+#
+# For a list of all available plugins, check out
+#
+#     https://docs.fastlane.tools/plugins/available-plugins
+#
+
+# Uncomment the line if you want fastlane to automatically update itself
+# update_fastlane
+
+default_platform(:ios)
+
+platform :ios do
+
+desc "Prepare library"
+lane :prepare do
+    sh("pod install")
+    end
+
+desc "Build project"
+lane :build_test do
+    xcodebuild(
+      workspace: "ProjectDemo.xcworkspace",
+      scheme: "ProjectDemo-Debug",
+      configuration: "Debug",
+      build_path: "./build",
+      derived_data_path: "./derived",
+      skip_package_ipa: true,
+      skip_archive: true,
+      clean: true,
+      build: true,
+      destination: "generic/platform=iOS Simulator",
+      xcargs: "CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO CODE_SIGNING_ALLOWED=NO -sdk iphonesimulator"
+    )
+end
+end
