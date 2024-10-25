@@ -10,6 +10,7 @@ target 'ProjectDemo' do
   pod 'SwiftLint', '0.57.0'
   pod 'SwiftGen', '6.6.3'
   pod 'lottie-ios', '4.5.0'
+  pod 'netfox', '1.21.0', :configurations => 'Debug'
   
   target 'ProjectDemoTests' do
     inherit! :search_paths
