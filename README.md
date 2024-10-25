@@ -1,5 +1,7 @@
 # Demo_networking
-A simple demo project with networking 						[![CI](https://github.com/zankyn123/DemoInterview/actions/workflows/BuildAppRelease.yml/badge.svg)](https://github.com/zankyn123/DemoInterview/actions/workflows/BuildAppRelease.yml)
+A simple demo project with networking 		
+
+[![CI](https://github.com/zankyn123/DemoInterview/actions/workflows/BuildAppRelease.yml/badge.svg)](https://github.com/zankyn123/DemoInterview/actions/workflows/BuildAppRelease.yml)
 
 ##  Programming language:
 - Swift
