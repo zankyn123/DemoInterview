@@ -1,9 +1,16 @@
 name: Test build release
-on: [pull_request, push]
-    paths-ignores:
-      - 'README.md'
-    branches:
-      - main
+on:
+    push:
+        branches:
+            - main
+        paths-ignore:
+            - 'README.md'
+    pull_request:
+        branches:
+            - main
+        paths-ignore:
+            - 'README.md'
+    
 jobs:
   iOS:
     name: Build release iOS
