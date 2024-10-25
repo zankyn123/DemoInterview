@@ -45,7 +45,7 @@ A simple demo project with networking
   - Feature:
      - Show images list with lazy loading
      - Show detail
-     - Settings
+     - Settings (Language)
   - Logging service for monitoring, tracking
   - Database with realm
 - Apply modularization
