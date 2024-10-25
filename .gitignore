@@ -114,6 +114,7 @@ playground.xcworkspace
 Pods/_Prebuild/GeneratedFrameworks/
 Pods/Target Support Files/*
 Pods/_Prebuild/Target Support Files/*
+Pods/*
 
 # Carthage - Refactored to standalone file
 
