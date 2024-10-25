@@ -35,7 +35,17 @@ A simple demo project with networking
 - [FastLane](https://docs.fastlane.tools/getting-started/ios/setup/)
 - [FastFile](https://docs.fastlane.tools/actions/)
 - [Github-actions](https://docs.github.com/en/actions)
- 
 
+- API:
+  - [Anime](https://jikan.moe/#features)
+ 
 # Comming soon :
+- Addding:
+  - Networking service
+  - Feature:
+     - Show images list with lazy loading
+     - Show detail
+     - Settings
+  - Logging service for monitoring, tracking
+  - Database with realm
 - Apply modularization
