@@ -9,7 +9,8 @@ on:
 jobs:
   iOS:
     name: Build release iOS
-    runs-on: macos-lastest
+    runs-on: macos-14
+    timeout-minutes: 720 # 12 hours
     steps:
       - uses: actions/checkout@v2
       - name: Bundle install
