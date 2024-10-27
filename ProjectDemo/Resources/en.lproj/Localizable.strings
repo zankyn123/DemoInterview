@@ -5,4 +5,6 @@
   Created by Manh Hung on 24/10/24.
   
 */
-"Test2222" = "test value";
+"SomethingError" = "Something wrong";
+"Ok" = "OK";
+"NoInternetConnection" = "No internet connection";

@@ -10,6 +10,10 @@ def shared_pods
   pod 'SwiftGen', '6.6.3'
   pod 'lottie-ios', '4.5.0'
   pod 'netfox', '1.21.0', :configurations => 'Debug'
+  pod 'DeviceKit', '5.2'
+  pod 'Toast-Swift', '5.1.1'
+  pod 'Kingfisher', '~> 8.0'
+  pod 'ReachabilitySwift'
 end
 
 target 'ProjectDemo' do

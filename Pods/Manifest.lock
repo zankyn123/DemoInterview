@@ -1,28 +1,44 @@
 PODS:
+  - DeviceKit (5.5.0)
+  - Kingfisher (8.1.0)
   - lottie-ios (4.5.0)
   - netfox (1.21.0)
+  - ReachabilitySwift (5.2.4)
   - SwiftGen (6.6.3)
   - SwiftLint (0.57.0)
+  - Toast-Swift (5.1.1)
 
 DEPENDENCIES:
+  - DeviceKit (~> 5.2)
+  - Kingfisher (~> 8.0)
   - lottie-ios (= 4.5.0)
   - netfox (= 1.21.0)
+  - ReachabilitySwift
   - SwiftGen (= 6.6.3)
   - SwiftLint (= 0.57.0)
+  - Toast-Swift (~> 5.1.1)
 
 SPEC REPOS:
   trunk:
+    - DeviceKit
+    - Kingfisher
     - lottie-ios
     - netfox
+    - ReachabilitySwift
     - SwiftGen
     - SwiftLint
+    - Toast-Swift
 
 SPEC CHECKSUMS:
+  DeviceKit: d83e38ca196a4ebf0cc5f37d6f0316a24b794d5b
+  Kingfisher: dfbf20b6249ed4ef6f18d6a96c847bce860bdb95
   lottie-ios: a881093fab623c467d3bce374367755c272bdd59
   netfox: 9d5cc727fe7576c4c7688a2504618a156b7d44b7
+  ReachabilitySwift: 32793e867593cfc1177f5d16491e3a197d2fccda
   SwiftGen: 4993cbf71cbc4886f775e26f8d5c3a1188ec9f99
   SwiftLint: eb47480d47c982481592c195c221d11013a679cc
+  Toast-Swift: 7a03a532afe3a560d4044bc7c237e2864d295173
 
-PODFILE CHECKSUM: 24b17ed4e363a7e1f30d7bbd181aff43ee1e5e39
+PODFILE CHECKSUM: c534f3ca8ea585bb6529ae447f0942428b6790a3
 
 COCOAPODS: 1.15.2
