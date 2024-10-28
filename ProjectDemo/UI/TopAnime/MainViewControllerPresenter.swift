@@ -24,7 +24,7 @@ final class MainViewControllerPresenter {
                 let datas: TopAnimeResModel? = try await apiRequest.getTopAnime(page: currentPage)
                 currentPage += 1
                 let entities = datas?.mappingToEntities() ?? []
-                await delegate?.onLoadedEntities(entities, hasMore: currentPage <= 3)
+                await delegate?.onLoadedEntities(entities, hasMore: datas?.pagination?.hasNextPage ?? false)
             } catch {
                 if let apiError = error as? APIError {
                     switch apiError {
