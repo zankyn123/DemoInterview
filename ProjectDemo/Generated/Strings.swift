@@ -10,8 +10,12 @@ import Foundation
 // swiftlint:disable explicit_type_interface function_parameter_count identifier_name line_length
 // swiftlint:disable nesting type_body_length type_name vertical_whitespace_opening_braces
 public enum ProjectLanguage {
-  /// test value
-  public static var test2222: String { return ProjectLanguage.tr("Localizable", "Test2222") }
+  /// No internet connection
+  public static var noInternetConnection: String { return ProjectLanguage.tr("Localizable", "NoInternetConnection") }
+  /// OK
+  public static var ok: String { return ProjectLanguage.tr("Localizable", "Ok") }
+  /// Something wrong
+  public static var somethingError: String { return ProjectLanguage.tr("Localizable", "SomethingError") }
 }
 // swiftlint:enable explicit_type_interface function_parameter_count identifier_name line_length
 // swiftlint:enable nesting type_body_length type_name vertical_whitespace_opening_braces

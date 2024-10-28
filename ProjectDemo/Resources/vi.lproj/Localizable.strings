@@ -6,4 +6,6 @@
   
 */
 
-"Test" = "test value";
+"SomethingError" = "Có lỗi xảy ra";
+"Ok" = "Đồng ý";
+"NoInternetConnection" = "Không có kết nối mạng";

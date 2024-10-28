@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Toast_Swift
 #if DEBUG
 import netfox
 #endif
@@ -19,12 +20,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         #if DEBUG
         NFX.sharedInstance().start()
         #endif
+        
+        notificationObserver()
+        do {
+            try ReachabilityManager.shared.startNotifier()
+        } catch { }
+        
         startApplicationWindow()
         return true
     }
     
     func startApplicationWindow() {
         setRootViewController(viewController: SplashViewController())
+    }
+    
+    func notificationObserver() {
+        NotificationCenter.default.addObserver(self, selector: #selector(showNoInternetToast), name: .noInternetConnectionNoti, object: nil)
     }
     
     func setRootViewController(viewController: UIViewController, completion: (() -> Void)? = nil) {
@@ -43,5 +54,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             completion?()
         }
         window?.makeKeyAndVisible()
+    }
+    
+    @objc
+    func showNoInternetToast() {
+        guard let rootVC = Utils.rootVC(), !ReachabilityManager.shared.hasInternetConnection else {
+            return
+        }
+        
+        var style = ToastStyle()
+        style.messageColor = .red
+        rootVC.view.makeToast(ProjectLanguage.noInternetConnection)
     }
 }

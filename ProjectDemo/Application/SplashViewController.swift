@@ -28,7 +28,7 @@ final class SplashViewController: UIViewController {
             guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
                 return
             }
-            let viewController = MainViewController()
+            let viewController = MainViewController(presenter: .init())
             appDelegate.setRootViewController(viewController: viewController)
         }
     }
