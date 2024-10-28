@@ -29,7 +29,7 @@ final class MainViewControllerPresenter {
                 if let apiError = error as? APIError {
                     switch apiError {
                     case .errorResponse(let modelError):
-                        debugPrint(modelError?.statusCode ?? "error status code \(-999)")
+                        debugPrint(modelError?.status ?? "error status code \(-999)")
                     default:
                         debugPrint(error)
                     }

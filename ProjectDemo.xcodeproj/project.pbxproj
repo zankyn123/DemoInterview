@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		029C68BD6D28593C634EACF7 /* Pods_ProjectDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D062A3507891B58068A67477 /* Pods_ProjectDemo.framework */; };
 		AC8E48FFF203D0F92BD544AB /* Pods_ProjectDemoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 349FEEB81113FAA93A35AA72 /* Pods_ProjectDemoTests.framework */; };
+		B21CD7AD2CCFC4F400BAD666 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B21CD7AC2CCFC4F400BAD666 /* UIKit.framework */; };
 		B22856872CCAA02500526C6F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B22856862CCAA02500526C6F /* Assets.xcassets */; };
 		B22856952CCAA02500526C6F /* ProjectDemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B22856942CCAA02500526C6F /* ProjectDemoTests.swift */; };
 		B22856C12CCAAD9000526C6F /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = B22856C02CCAAD9000526C6F /* Strings.swift */; };
@@ -36,7 +37,7 @@
 		B25C95152CCBAAE6008BE6A6 /* NetworkingDefinition.swift in Sources */ = {isa = PBXBuildFile; fileRef = B25C95142CCBAAE6008BE6A6 /* NetworkingDefinition.swift */; };
 		B25C95172CCBAB04008BE6A6 /* NetworkingFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = B25C95162CCBAB04008BE6A6 /* NetworkingFactory.swift */; };
 		B25C95202CCBB0DE008BE6A6 /* URLSessionNetworkingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B25C951F2CCBB0DE008BE6A6 /* URLSessionNetworkingService.swift */; };
-		B25C95222CCBB0F4008BE6A6 /* NetworkingServerMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = B25C95212CCBB0F4008BE6A6 /* NetworkingServerMock.swift */; };
+		B25C95222CCBB0F4008BE6A6 /* MockNetworkingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B25C95212CCBB0F4008BE6A6 /* MockNetworkingService.swift */; };
 		B25C95262CCBB2E6008BE6A6 /* BaseRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B25C95252CCBB2E6008BE6A6 /* BaseRequest.swift */; };
 		B2EDE10B2CCB796E00903694 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2EDE10A2CCB796E00903694 /* AppDelegate.swift */; };
 		B2EDE10D2CCB797F00903694 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2EDE10C2CCB797F00903694 /* SplashViewController.swift */; };
@@ -58,6 +59,9 @@
 		022F88A35510889B5F74AE1D /* Pods-ProjectDemoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProjectDemoTests.debug.xcconfig"; path = "Target Support Files/Pods-ProjectDemoTests/Pods-ProjectDemoTests.debug.xcconfig"; sourceTree = "<group>"; };
 		340DEA3DB7B751193BF3E4C4 /* Pods-ProjectDemoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProjectDemoTests.release.xcconfig"; path = "Target Support Files/Pods-ProjectDemoTests/Pods-ProjectDemoTests.release.xcconfig"; sourceTree = "<group>"; };
 		349FEEB81113FAA93A35AA72 /* Pods_ProjectDemoTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ProjectDemoTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B21CD7A32CCFBACA00BAD666 /* TestPlan.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = TestPlan.xctestplan; sourceTree = "<group>"; };
+		B21CD7A42CCFBCDD00BAD666 /* TestPlan.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; name = TestPlan.xctestplan; path = ProjectDemo/TestPlan.xctestplan; sourceTree = SOURCE_ROOT; };
+		B21CD7AC2CCFC4F400BAD666 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		B228567A2CCAA02400526C6F /* ProjectDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ProjectDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B22856862CCAA02500526C6F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ../Assets.xcassets; sourceTree = "<group>"; };
 		B228568B2CCAA02500526C6F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -90,7 +94,7 @@
 		B25C95142CCBAAE6008BE6A6 /* NetworkingDefinition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingDefinition.swift; sourceTree = "<group>"; };
 		B25C95162CCBAB04008BE6A6 /* NetworkingFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingFactory.swift; sourceTree = "<group>"; };
 		B25C951F2CCBB0DE008BE6A6 /* URLSessionNetworkingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionNetworkingService.swift; sourceTree = "<group>"; };
-		B25C95212CCBB0F4008BE6A6 /* NetworkingServerMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingServerMock.swift; sourceTree = "<group>"; };
+		B25C95212CCBB0F4008BE6A6 /* MockNetworkingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockNetworkingService.swift; sourceTree = "<group>"; };
 		B25C95252CCBB2E6008BE6A6 /* BaseRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseRequest.swift; sourceTree = "<group>"; };
 		B2EDE10A2CCB796E00903694 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B2EDE10C2CCB797F00903694 /* SplashViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
@@ -114,6 +118,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B21CD7AD2CCFC4F400BAD666 /* UIKit.framework in Frameworks */,
 				AC8E48FFF203D0F92BD544AB /* Pods_ProjectDemoTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -124,6 +129,7 @@
 		8DDD7C98AF2259D547CB6D68 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				B21CD7AC2CCFC4F400BAD666 /* UIKit.framework */,
 				D062A3507891B58068A67477 /* Pods_ProjectDemo.framework */,
 				349FEEB81113FAA93A35AA72 /* Pods_ProjectDemoTests.framework */,
 			);
@@ -162,6 +168,7 @@
 				B22856B22CCAA92E00526C6F /* Utils */,
 				B25BA90E2CCCD48A006FC2C7 /* Extensions */,
 				B22856B02CCAA92000526C6F /* Resources */,
+				B21CD7A32CCFBACA00BAD666 /* TestPlan.xctestplan */,
 			);
 			path = ProjectDemo;
 			sourceTree = "<group>";
@@ -169,6 +176,7 @@
 		B22856932CCAA02500526C6F /* ProjectDemoTests */ = {
 			isa = PBXGroup;
 			children = (
+				B21CD7A42CCFBCDD00BAD666 /* TestPlan.xctestplan */,
 				B22856942CCAA02500526C6F /* ProjectDemoTests.swift */,
 			);
 			path = ProjectDemoTests;
@@ -289,7 +297,7 @@
 		B25BA91A2CCCE5B3006FC2C7 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				B25BA91B2CCCE5BE006FC2C7 /* TopAnimeResModel.swift */,
+				B2D7B29D2CCFC7CD00D2131E /* MainModel */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -313,7 +321,7 @@
 		B25C951E2CCBB082008BE6A6 /* Local */ = {
 			isa = PBXGroup;
 			children = (
-				B25C95212CCBB0F4008BE6A6 /* NetworkingServerMock.swift */,
+				B25C95212CCBB0F4008BE6A6 /* MockNetworkingService.swift */,
 			);
 			path = Local;
 			sourceTree = "<group>";
@@ -321,12 +329,12 @@
 		B25C95232CCBB278008BE6A6 /* DataLayer */ = {
 			isa = PBXGroup;
 			children = (
+				B25C95142CCBAAE6008BE6A6 /* NetworkingDefinition.swift */,
+				B25C95252CCBB2E6008BE6A6 /* BaseRequest.swift */,
+				B25C95162CCBAB04008BE6A6 /* NetworkingFactory.swift */,
 				B25C95122CCBAADE008BE6A6 /* NetworkingServiceProtocol.swift */,
 				B25C951E2CCBB082008BE6A6 /* Local */,
 				B25C951D2CCBB07D008BE6A6 /* Networking */,
-				B25C95142CCBAAE6008BE6A6 /* NetworkingDefinition.swift */,
-				B25C95162CCBAB04008BE6A6 /* NetworkingFactory.swift */,
-				B25C95252CCBB2E6008BE6A6 /* BaseRequest.swift */,
 			);
 			path = DataLayer;
 			sourceTree = "<group>";
@@ -337,6 +345,14 @@
 				B25BA9112CCCD9F3006FC2C7 /* TopAnimeAPIRequest.swift */,
 			);
 			path = APIs;
+			sourceTree = "<group>";
+		};
+		B2D7B29D2CCFC7CD00D2131E /* MainModel */ = {
+			isa = PBXGroup;
+			children = (
+				B25BA91B2CCCE5BE006FC2C7 /* TopAnimeResModel.swift */,
+			);
+			path = MainModel;
 			sourceTree = "<group>";
 		};
 		B2EDE1162CCB7F6400903694 /* TopAnime */ = {
@@ -594,7 +610,7 @@
 				B246B6722CCE76D0008ADA3B /* MainCollectionViewCell.swift in Sources */,
 				B25C95132CCBAADE008BE6A6 /* NetworkingServiceProtocol.swift in Sources */,
 				B246B6752CCE7723008ADA3B /* UICollectionView+Ext.swift in Sources */,
-				B25C95222CCBB0F4008BE6A6 /* NetworkingServerMock.swift in Sources */,
+				B25C95222CCBB0F4008BE6A6 /* MockNetworkingService.swift in Sources */,
 				B246B66A2CCE16CA008ADA3B /* NotificationCenter+Ext.swift in Sources */,
 				B25BA9162CCCE586006FC2C7 /* MainViewControllerPresenter.swift in Sources */,
 				B25C95152CCBAAE6008BE6A6 /* NetworkingDefinition.swift in Sources */,

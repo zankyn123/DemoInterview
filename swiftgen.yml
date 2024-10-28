@@ -5,4 +5,4 @@ strings:
     output: ProjectDemo/Generated/Strings.swift
     params:
       publicAccess: public
-      enumName: ProjectLanguage
+      enumName: L10n

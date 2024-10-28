@@ -25,11 +25,8 @@ final class SplashViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         Timer.scheduledTimer(withTimeInterval: 1, repeats: false) { _ in
-            guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
-                return
-            }
             let viewController = MainViewController(presenter: .init())
-            appDelegate.setRootViewController(viewController: viewController)
+            Utils.setRootViewController(viewController: viewController)
         }
     }
     

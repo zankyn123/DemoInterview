@@ -26,9 +26,9 @@ struct Utils {
         }
         
         let alertErrorVC = UIAlertController(title: title ?? "",
-                                             message: message ?? ProjectLanguage.somethingError,
+                                             message: message ?? L10n.somethingError,
                                              preferredStyle: .alert)
-        let alertAction = UIAlertAction(title: ProjectLanguage.ok, style: .cancel)
+        let alertAction = UIAlertAction(title: L10n.ok, style: .cancel)
         alertErrorVC.addAction(alertAction)
         rootVC.present(alertErrorVC, animated: true)
     }
@@ -36,6 +36,27 @@ struct Utils {
     static func rootVC() -> UIViewController? {
         let windows = UIWindow.key
         return windows?.rootViewController
+    }
+    
+    static func setRootViewController(viewController: UIViewController, completion: (() -> Void)? = nil) {
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
+            return
+        }
+        if let window = appDelegate.window, window.rootViewController != nil {
+            let navigation = UINavigationController(rootViewController: viewController)
+            let options: UIView.AnimationOptions = .transitionCrossDissolve
+            window.rootViewController = navigation
+            let duration: TimeInterval = 0.3
+            UIView.transition(with: window, duration: duration, options: options, animations: {}, completion: { _ in
+                window.makeKeyAndVisible()
+                completion?()
+            })
+        } else {
+            // Splash screen
+            appDelegate.window?.rootViewController = viewController
+            completion?()
+        }
+        appDelegate.window?.makeKeyAndVisible()
     }
     
     static func fatalSubclassMustImpl() -> Never {

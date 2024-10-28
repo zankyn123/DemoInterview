@@ -7,17 +7,17 @@
 
 import Foundation
 
-struct NetworkFactory {
+struct NetworkServiceFactory {
     enum NetworkingType {
         case urlSessions
         // May alamofire
     }
     private let networkService: NetworkingServiceProtocol
-    static var `default`: NetworkFactory = NetworkFactory(networkService: URLSessionNetworkingService.shared)
-    static var mock: NetworkFactory = NetworkFactory(networkService: NetworkingServerMock())
+    static var `default`: NetworkServiceFactory = NetworkServiceFactory(networkService: URLSessionNetworkingService.shared)
+    static var mock: NetworkServiceFactory = NetworkServiceFactory(networkService: MockNetworkingService())
 }
 
-extension NetworkFactory: NetworkingServiceProtocol {
+extension NetworkServiceFactory: NetworkingServiceProtocol {
     func requestAPI<T: Codable>(request: URLRequestConverterProtocol & APIConfigurationProtocol) async throws -> T? {
         return try await networkService.requestAPI(request: request)
     }

@@ -8,7 +8,6 @@
 import Foundation
 import Reachability
 
-// swiftlint:disable all
 final class URLSessionNetworkingService: NSObject, NetworkingServiceProtocol, URLSessionDelegate {
     static var shared: URLSessionNetworkingService = URLSessionNetworkingService()
     
@@ -27,8 +26,8 @@ final class URLSessionNetworkingService: NSObject, NetworkingServiceProtocol, UR
             case 500...:
                 throw APIError.internalError
             default:
-                throw APIError.errorResponse(.init(statusCode: httpResponse.statusCode,
-                                                   responseData: data))
+                let errorRes = try JSONDecoder().decode(APIErrorRes.self, from: data)
+                throw APIError.errorResponse(errorRes)
             }
         } catch {
             if let error = error as? APIError {
@@ -37,7 +36,7 @@ final class URLSessionNetworkingService: NSObject, NetworkingServiceProtocol, UR
                     await Utils.showAlertError()
                     throw error
                 case .noInternet:
-                    await Utils.showAlertError(message: ProjectLanguage.noInternetConnection)
+                    await Utils.showAlertError(message: L10n.noInternetConnection)
                     throw error
                 default:
                     throw error
@@ -45,7 +44,7 @@ final class URLSessionNetworkingService: NSObject, NetworkingServiceProtocol, UR
             } else if let error = error as? URLError {
                 switch error.code {
                 case .timedOut:
-                    await Utils.showAlertError()
+                    await Utils.showAlertError(message: L10n.noInternetConnection)
                     throw APIError.timeout
                 case .notConnectedToInternet:
                     throw APIError.noInternet
