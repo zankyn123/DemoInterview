@@ -22,7 +22,7 @@ protocol APIConfigurationProtocol {
     var timeoutRequest: TimeInterval { get }
 }
 
-class BaseRequest: URLRequestConverterProtocol, APIConfigurationProtocol {
+class BaseAPIRequest: URLRequestConverterProtocol, APIConfigurationProtocol {
     var apiVersion: String {
         Constants.apiV4
     }
@@ -80,15 +80,12 @@ class BaseRequest: URLRequestConverterProtocol, APIConfigurationProtocol {
         var httpHeaderFields: [String: String] = [HTTPHeaderField.contentType.rawValue: HTTPHeaderValue.applicationJson.rawValue,
                                                   HTTPHeaderField.acceptEncoding.rawValue: HTTPHeaderValue.acceptEncoding.rawValue,
                                                   HTTPHeaderField.acceptType.rawValue: HTTPHeaderValue.accept.rawValue,
-                                                  HTTPHeaderField.deviceName.rawValue: "\(device.description) - \(device.systemVersion ?? "")"]
+                                                  HTTPHeaderField.deviceName.rawValue: "\(device.description) - \(device.systemVersion ?? "")",
+                                                  HTTPHeaderField.appVersion.rawValue: Bundle.main.shortVersion,
+                                                  HTTPHeaderField.productVersion.rawValue: Bundle.main.productVersion]
         if let vendor = UIDevice.current.identifierForVendor {
             httpHeaderFields.updateValue(vendor.uuidString,
                                          forKey: HTTPHeaderField.fingerPrint.rawValue)
-        }
-        if let info = Bundle.main.infoDictionary {
-            let appVersion = info[Constants.bundleShortVersionKey] as? String ?? "Unknown"
-            httpHeaderFields.updateValue("project-demo-\(appVersion)",
-                                         forKey: HTTPHeaderField.appVersion.rawValue)
         }
         return httpHeaderFields
     }
