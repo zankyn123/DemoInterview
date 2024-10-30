@@ -7,35 +7,39 @@
 
 import UIKit
 
+protocol CellReuseIdentifier: CaseIterable, RawRepresentable where RawValue == String {
+    var cellClass: AnyClass { get }
+}
+
+public protocol HeaderFooterReuseViewIdentifier: CaseIterable, RawRepresentable where RawValue == String {
+    var headerFooterClass: AnyClass { get }
+}
+
 // swiftlint: disable all
 extension UICollectionView {
-    func dequeueCellFor<T: UICollectionViewCell>(_ cellClass: T.Type, for indexPath: IndexPath) -> T {
-        let cellIdentifier = String(describing: cellClass)
-        guard let cell = self.dequeueReusableCell(withReuseIdentifier: cellIdentifier, for: indexPath) as? T else {
-            fatalError("Unable to dequeue reusable collection view cell: \(T.self)")
+    func registerReuseCellIdentifier<T: CellReuseIdentifier>(_ cellReuseIdentifier: T.Type) {
+        cellReuseIdentifier.allCases.forEach { cellReuseIdentifier in
+            let nib = UINib(nibName: cellReuseIdentifier.rawValue, bundle: Bundle.init(for: cellReuseIdentifier.cellClass))
+            self.register(nib, forCellWithReuseIdentifier: cellReuseIdentifier.rawValue)
         }
-        return cell
     }
     
-    func registerCell(_ cellClass: UICollectionViewCell.Type, bundle: Bundle = .main) {
-        let cellIdentifier = String(describing: cellClass)
-        let nib = UINib(nibName: cellIdentifier, bundle: bundle)
-        self.register(nib, forCellWithReuseIdentifier: cellIdentifier)
-    }
-    
-    func registerReusableView<T: UICollectionReusableView>(for type: T.Type, ofKind elementKind: String) {
-        self.register(UINib(nibName: String(describing: type), bundle: Bundle(for: type)),
-                      forSupplementaryViewOfKind: elementKind,
-                      withReuseIdentifier: String(describing: type))
-    }
-    
-    public func dequeueReusableSupplementaryView<T: UICollectionReusableView>(ofKind kind: String,
-                                                                              for indexPath: IndexPath) -> T {
-        guard let section = dequeueReusableSupplementaryView(ofKind: kind,
-                                                             withReuseIdentifier: String(describing: T.self),
-                                                             for: indexPath) as? T else {
-            fatalError("Unable to dequeue reusable supplementary view: \(T.self)")
+    func registerHeaderFooterReuseIdentifier<T: HeaderFooterReuseViewIdentifier>(_ headerFooterReuseViewIdentifier: T.Type, ofKind elementKind: String) {
+        headerFooterReuseViewIdentifier.allCases.forEach { headerFooterReuseViewIdentifier in
+            let nib = UINib(nibName: headerFooterReuseViewIdentifier.rawValue, bundle: Bundle(for: headerFooterReuseViewIdentifier.headerFooterClass))
+            self.register(nib, forSupplementaryViewOfKind: elementKind, withReuseIdentifier: headerFooterReuseViewIdentifier.rawValue)
         }
-        return section
+    }
+    
+    func dequeueCellReuseIdentifier(_ cellReuseIdentifier: some CellReuseIdentifier, for indexPath: IndexPath) -> UICollectionViewCell {
+        return self.dequeueReusableCell(withReuseIdentifier: cellReuseIdentifier.rawValue, for: indexPath)
+    }
+    
+    public func dequeueHeaderFooterReuseViewIdentifier(_ headerFooterReuseViewIdentifier: some HeaderFooterReuseViewIdentifier,
+                                                       ofKind kind: String,
+                                                       for indexPath: IndexPath) -> UICollectionReusableView {
+        return dequeueReusableSupplementaryView(ofKind: kind,
+                                                withReuseIdentifier: headerFooterReuseViewIdentifier.rawValue,
+                                                for: indexPath)
     }
 }
