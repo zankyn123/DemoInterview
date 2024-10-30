@@ -7,7 +7,7 @@
 
 import Foundation
 
-final class TopAnimeAPIRequest: BaseRequest {
+final class TopAnimeAPIRequest: BaseAPIRequest {
     enum Function {
         case listTopAnime(_ currentPage: Int)
     }

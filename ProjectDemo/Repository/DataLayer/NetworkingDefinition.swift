@@ -20,6 +20,7 @@ public enum HTTPHeaderField: String {
     case acceptType = "Accept"
     case acceptEncoding = "Accept-Encoding"
     case appVersion = "APP-VERSION"
+    case productVersion = "PRODUCT-VERSION"
     case deviceName = "DEVICE-NAME"
     case fingerPrint = "X-Request-Fingerprint"
 }

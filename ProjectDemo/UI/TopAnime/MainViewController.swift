@@ -8,6 +8,25 @@
 import UIKit
 
 final class MainViewController: UIViewController {
+    enum MainCellReuseIdentifier: String, CellReuseIdentifier {
+        case mainClvCell = "MainCollectionViewCell"
+        var cellClass: AnyClass {
+            switch self {
+            case .mainClvCell:
+                return MainCollectionViewCell.self
+            }
+        }
+    }
+    enum MainHeaderFooterReuseIdentifier: String, HeaderFooterReuseViewIdentifier {
+        case loadMore = "LoadMoreReusableView"
+        var headerFooterClass: AnyClass {
+            switch self {
+            case .loadMore:
+                return LoadMoreReusableView.self
+            }
+        }
+    }
+    
     typealias SnapShot = NSDiffableDataSourceSnapshot<Int, MainViewControllerEntity>
     typealias DataSource = UICollectionViewDiffableDataSource<Int, MainViewControllerEntity>
     // MARK: - Variables
@@ -38,11 +57,13 @@ final class MainViewController: UIViewController {
         title = "Top Anime"
         // Collection view
         mainClv.delegate = self
-        mainClv.registerReusableView(for: LoadMoreReusableView.self, ofKind: UICollectionView.elementKindSectionFooter)
-        mainClv.registerCell(MainCollectionViewCell.self)
+        mainClv.registerReuseCellIdentifier(MainCellReuseIdentifier.self)
+        mainClv.registerHeaderFooterReuseIdentifier(MainHeaderFooterReuseIdentifier.self, ofKind: UICollectionView.elementKindSectionFooter)
         // Items
         dataSource = DataSource(collectionView: mainClv, cellProvider: { collectionView, indexPath, entity in
-            let cell = collectionView.dequeueCellFor(MainCollectionViewCell.self, for: indexPath)
+            guard let cell = collectionView.dequeueCellReuseIdentifier(MainCellReuseIdentifier.mainClvCell, for: indexPath) as? MainCollectionViewCell else {
+                return UICollectionViewCell()
+            }
             cell.setEntity(entity)
             return cell
         })
@@ -54,8 +75,12 @@ final class MainViewController: UIViewController {
             guard elementKind == UICollectionView.elementKindSectionFooter else {
                 return UICollectionReusableView()
             }
-            let loadMoreReusableView: LoadMoreReusableView = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionFooter,
-                                                                                                             for: indexPath)
+            let loadMoreReusableView = collectionView.dequeueHeaderFooterReuseViewIdentifier(MainHeaderFooterReuseIdentifier.loadMore,
+                                                                                             ofKind: UICollectionView.elementKindSectionFooter,
+                                                                                             for: indexPath)
+            guard let loadMoreReusableView = loadMoreReusableView as? LoadMoreReusableView else {
+                return nil
+            }
             if self.hasMoreItems {
                 loadMoreReusableView.startAnimation()
             } else {
