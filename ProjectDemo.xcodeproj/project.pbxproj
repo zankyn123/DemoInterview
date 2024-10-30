@@ -30,6 +30,7 @@
 		B25B2C5D2CD2548D00436825 /* NSAttributedString+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = B25B2C5C2CD2548D00436825 /* NSAttributedString+Ext.swift */; };
 		B25B2C5F2CD2550400436825 /* CharacterSet+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = B25B2C5E2CD2550400436825 /* CharacterSet+Ext.swift */; };
 		B25B2C612CD255A200436825 /* Bundle+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = B25B2C602CD255A200436825 /* Bundle+Ext.swift */; };
+		B25B2C642CD2693100436825 /* NetworkingServiceHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = B25B2C632CD2693100436825 /* NetworkingServiceHelpers.swift */; };
 		B25BA90B2CCCCFA3006FC2C7 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = B25BA90A2CCCCFA3006FC2C7 /* Utils.swift */; };
 		B25BA90D2CCCCFC2006FC2C7 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B25BA90C2CCCCFC2006FC2C7 /* Constants.swift */; };
 		B25BA9102CCCD497006FC2C7 /* Windows+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = B25BA90F2CCCD497006FC2C7 /* Windows+Ext.swift */; };
@@ -91,6 +92,7 @@
 		B25B2C5C2CD2548D00436825 /* NSAttributedString+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSAttributedString+Ext.swift"; sourceTree = "<group>"; };
 		B25B2C5E2CD2550400436825 /* CharacterSet+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CharacterSet+Ext.swift"; sourceTree = "<group>"; };
 		B25B2C602CD255A200436825 /* Bundle+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+Ext.swift"; sourceTree = "<group>"; };
+		B25B2C632CD2693100436825 /* NetworkingServiceHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingServiceHelpers.swift; sourceTree = "<group>"; };
 		B25BA90A2CCCCFA3006FC2C7 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		B25BA90C2CCCCFC2006FC2C7 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		B25BA90F2CCCD497006FC2C7 /* Windows+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Windows+Ext.swift"; sourceTree = "<group>"; };
@@ -205,6 +207,7 @@
 		B22856B12CCAA92800526C6F /* Repository */ = {
 			isa = PBXGroup;
 			children = (
+				B25B2C622CD2692400436825 /* Helper */,
 				B25BA91A2CCCE5B3006FC2C7 /* Models */,
 				B25C95242CCBB27F008BE6A6 /* APIs */,
 				B25C95232CCBB278008BE6A6 /* DataLayer */,
@@ -288,6 +291,14 @@
 				B246B6712CCE76D0008ADA3B /* MainCollectionViewCell.xib */,
 			);
 			path = Cell;
+			sourceTree = "<group>";
+		};
+		B25B2C622CD2692400436825 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				B25B2C632CD2693100436825 /* NetworkingServiceHelpers.swift */,
+			);
+			path = Helper;
 			sourceTree = "<group>";
 		};
 		B25BA90E2CCCD48A006FC2C7 /* Extensions */ = {
@@ -611,6 +622,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B25B2C642CD2693100436825 /* NetworkingServiceHelpers.swift in Sources */,
 				B2EDE10B2CCB796E00903694 /* AppDelegate.swift in Sources */,
 				B25BA91C2CCCE5BE006FC2C7 /* TopAnimeResModel.swift in Sources */,
 				B22856C12CCAAD9000526C6F /* Strings.swift in Sources */,

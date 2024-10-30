@@ -8,6 +8,7 @@
 import UIKit
 import Reachability
 import Toast_Swift
+import os
 
 struct Utils {
     static func getBaseUrl() -> String {
