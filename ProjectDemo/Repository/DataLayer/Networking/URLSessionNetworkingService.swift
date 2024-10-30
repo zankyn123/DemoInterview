@@ -10,16 +10,19 @@ import Reachability
 
 final class URLSessionNetworkingService: NSObject, NetworkingServiceProtocol, URLSessionDelegate {
     static var shared: URLSessionNetworkingService = URLSessionNetworkingService()
+    private let helper = NetworkingServiceHelpers()
     
     func requestAPI<T: Codable>(request: URLRequestConverterProtocol & APIConfigurationProtocol) async throws -> T? {
         guard let urlRequest = request.asUrlRequest() else {
             throw RequestError.unknown
         }
+        helper.printRequest(request: urlRequest)
         do {
             let (data, urlResponse) = try await URLSession(configuration: .default, delegate: self, delegateQueue: nil).data(for: urlRequest)
             guard let httpResponse = urlResponse as? HTTPURLResponse else {
                 throw RequestError.unknown
             }
+            helper.printResponse(data: data, request: urlRequest, response: httpResponse)
             switch httpResponse.statusCode {
             case 200..<300:
                 return try JSONDecoder().decode(T.self, from: data)
