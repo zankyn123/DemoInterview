@@ -9,20 +9,20 @@ import Foundation
 
 // swiftlint:disable explicit_type_interface function_parameter_count identifier_name line_length
 // swiftlint:disable nesting type_body_length type_name vertical_whitespace_opening_braces
-public enum ProjectLanguage {
+public enum L10n {
   /// No internet connection
-  public static var noInternetConnection: String { return ProjectLanguage.tr("Localizable", "NoInternetConnection") }
+  public static var noInternetConnection: String { return L10n.tr("Localizable", "NoInternetConnection") }
   /// OK
-  public static var ok: String { return ProjectLanguage.tr("Localizable", "Ok") }
+  public static var ok: String { return L10n.tr("Localizable", "Ok") }
   /// Something wrong
-  public static var somethingError: String { return ProjectLanguage.tr("Localizable", "SomethingError") }
+  public static var somethingError: String { return L10n.tr("Localizable", "SomethingError") }
 }
 // swiftlint:enable explicit_type_interface function_parameter_count identifier_name line_length
 // swiftlint:enable nesting type_body_length type_name vertical_whitespace_opening_braces
 
 // MARK: - Implementation Details
 
-extension ProjectLanguage {
+extension L10n {
   private static func tr(_ table: String, _ key: String, _ args: CVarArg...) -> String {
     let format = BundleToken.bundle.localizedString(forKey: key, value: nil, table: table)
     let lang = (UserDefaults.standard.value(forKey: "AppleLanguages") as? [String])?.first ?? "en"

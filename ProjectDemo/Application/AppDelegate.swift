@@ -21,7 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         NFX.sharedInstance().start()
         #endif
         
-        notificationObserver()
+        addNotificationObserver()
         do {
             try ReachabilityManager.shared.startNotifier()
         } catch { }
@@ -30,30 +30,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return true
     }
     
-    func startApplicationWindow() {
-        setRootViewController(viewController: SplashViewController())
+    func applicationWillResignActive(_ application: UIApplication) {
+        
     }
     
-    func notificationObserver() {
+    private func startApplicationWindow() {
+        Utils.setRootViewController(viewController: SplashViewController())
+    }
+    
+    private func addNotificationObserver() {
         NotificationCenter.default.addObserver(self, selector: #selector(showNoInternetToast), name: .noInternetConnectionNoti, object: nil)
-    }
-    
-    func setRootViewController(viewController: UIViewController, completion: (() -> Void)? = nil) {
-        if let window = window, window.rootViewController != nil {
-            let navigation = UINavigationController(rootViewController: viewController)
-            let options: UIView.AnimationOptions = .transitionCrossDissolve
-            window.rootViewController = navigation
-            let duration: TimeInterval = 0.3
-            UIView.transition(with: window, duration: duration, options: options, animations: {}, completion: { _ in
-                window.makeKeyAndVisible()
-                completion?()
-            })
-        } else {
-            // Splash screen
-            window?.rootViewController = viewController
-            completion?()
-        }
-        window?.makeKeyAndVisible()
     }
     
     @objc
@@ -64,6 +50,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         var style = ToastStyle()
         style.messageColor = .red
-        rootVC.view.makeToast(ProjectLanguage.noInternetConnection)
+        rootVC.view.makeToast(L10n.noInternetConnection)
     }
 }

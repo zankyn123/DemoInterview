@@ -12,7 +12,7 @@ final class TopAnimeAPIRequest: BaseRequest {
         case listTopAnime(_ currentPage: Int)
     }
     var function: Function?
-    var networking: NetworkFactory
+    var networking: NetworkServiceFactory
     
     override var httpMethod: HTTPMethod {
         switch function {
@@ -41,7 +41,7 @@ final class TopAnimeAPIRequest: BaseRequest {
         }
     }
     
-    init(_ networkFactory: NetworkFactory = .default) {
+    init(_ networkFactory: NetworkServiceFactory = .default) {
         self.networking = networkFactory
     }
     

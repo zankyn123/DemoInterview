@@ -7,7 +7,7 @@
 
 import Foundation
 
-final class NetworkingServerMock: NetworkingServiceProtocol {
+final class MockNetworkingService: NetworkingServiceProtocol {
     func requestAPI<T: Codable>(request: URLRequestConverterProtocol & APIConfigurationProtocol) async throws -> T? {
         return nil
     }

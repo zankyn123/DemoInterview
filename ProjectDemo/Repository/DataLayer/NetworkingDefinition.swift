@@ -40,10 +40,18 @@ public enum APIError: Error {
     case timeout
     case noInternet
     case internalError
-    case errorResponse(ModelError?)
+    case errorResponse(APIErrorRes?)
 }
 
-public struct ModelError {
-    var statusCode: Int
-    var responseData: Data
+public struct APIErrorRes: Codable {
+    var status: Int?
+    var type: String?
+    var message: String?
+    var error: String?
+    var reportUrl: String?
+    
+    enum CodingKeys: String, CodingKey {
+        case status, type, message, error
+        case reportUrl = "report_url"
+    }
 }
